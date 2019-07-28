@@ -36,27 +36,11 @@ function compareTheTypeOfTwoAccount (account1, account2) {
 }
 function isAccount1BiggerThanAccount2(account1, account2) {
     var compareType = compareTheTypeOfTwoAccount (account1, account2);
-    if (compareType == 0) {
-        var type1 = defineTypeOfAccount(account1);
-        if (type1 = 2) {
-            if (account1.credit > account2.credit) 
-                return true;
-            else
-                return false;
-        }
-        if (type1 = 1) {
-            if (account1.debit > account2.debit) 
-                return true;
-            else
-                return false;
-        }
-        else {
-            if (account1.accountNumber > account2.accountNumber) 
-                return true;
-            else
-                return false;
-        }
-    }
+    if (compareType == 0)
+        if (account1.accountNumber > account2.accountNumber) 
+            return true;
+        else 
+            return false;
     if (compareType == 1)
         return false;
     else
@@ -78,6 +62,7 @@ Accounts[2] = createDebitAccount();
 Accounts[3] = createDebitAccount();
 Accounts[4] = createUnidentifiedAccount();
 Accounts[5] = createCreditAccount();
-sortAccount(Accounts)
+Accounts[6] = createAccount(Math.random(), null, Math.random());
+sortAccount(Accounts);
 
 console.log(Accounts);
